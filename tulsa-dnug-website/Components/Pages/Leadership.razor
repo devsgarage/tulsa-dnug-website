@@ -1,0 +1,44 @@
+@page "/leadership"
+@using tulsa_dnug_website.Services
+@using tulsa_dnug_website.shared_kernel.Models
+@inject WebsiteDataService websiteDataService
+
+<h1>Leadership Page</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (leaders == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First</th>
+                <th>Last(C)</th>
+                <th>Title(F)</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var leader in leaders)
+            {
+                <tr>
+                    <td>@leader.FirstName</td>
+                    <td>@leader.LastName</td>
+                    <td>@leader.Title</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@functions {
+    Leader[] leaders;
+
+    protected override async Task OnInitAsync()
+    {
+        leaders = await websiteDataService.GetLeadersAsync();
+    }
+}
