@@ -6,7 +6,7 @@ namespace tulsa_dnug_website.Services
 {
     public class WeatherForecastService
     {
-        private static string[] Summaries = new[]
+        private readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
