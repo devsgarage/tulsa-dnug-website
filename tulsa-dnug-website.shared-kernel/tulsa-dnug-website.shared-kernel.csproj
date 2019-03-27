@@ -1,0 +1,8 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <RootNamespace>tulsa_dnug_website.shared_kernel</RootNamespace>
+  </PropertyGroup>
+
+</Project>
