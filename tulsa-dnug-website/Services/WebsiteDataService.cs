@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,13 +11,18 @@ namespace tulsa_dnug_website.Services
 {
     public class WebsiteDataService
     {
+        IConfiguration config;
+        public WebsiteDataService(IConfiguration config)
+        {
+            this.config = config;
+        }
 
         public async Task<Leader[]> GetLeadersAsync()
         {
             List<Leader> leaders = new List<Leader>();
 
             // ... Use HttpClient.
-            string page = "https://localhost:44346/api/leaders";
+            string page = config.GetValue<string>("WebApiUrl");
             using (HttpClient client = new HttpClient())
             using (HttpResponseMessage response = await client.GetAsync(page))
             using (HttpContent content = response.Content)

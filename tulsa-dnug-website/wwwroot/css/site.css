@@ -96,6 +96,30 @@ app {
     color: red;
 }
 
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.social-media {
+    height: 100px;
+    background-color: black;
+}
+
+    .social-media div {
+        padding-top: 2.5rem;
+        text-align: center;
+    }
+
+    .social-media a:hover {
+        text-decoration: none;
+    }
+
+footer {
+    display: flex;
+    flex-direction:column;
+}
+
 @media (max-width: 767.98px) {
     .main .top-row {
         display: none;
@@ -104,7 +128,7 @@ app {
 
 @media (min-width: 768px) {
     app {
-        flex-direction: row;
+        
     }
 
     .sidebar {
@@ -131,5 +155,9 @@ app {
     .sidebar .collapse {
         /* Never collapse the sidebar for wide screens */
         display: block;
+    }
+    .main-wrapper {
+        display: flex;
+        flex-direction: row;
     }
 }
