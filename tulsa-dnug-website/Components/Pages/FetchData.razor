@@ -1,9 +1,6 @@
 @page "/fetchdata"
 @using tulsa_dnug_website.Services
-@using tulsa_dnug_website.core.Models
-@using tulsa_dnug_website.infrastructure.Services
 @inject WeatherForecastService ForecastService
-@inject MeetupService MService
 
 <h1>Weather forecast</h1>
 
@@ -40,12 +37,9 @@ else
 
 @functions {
     WeatherForecast[] forecasts;
-    MeetingDetails details;
-
 
     protected override async Task OnInitAsync()
     {
         forecasts = await ForecastService.GetForecastAsync(DateTime.Now);
-        details = await MService.GetMeetingInfo();
     }
 }

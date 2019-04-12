@@ -1,0 +1,15 @@
+﻿@using tulsa_dnug_website.core.Models
+@using tulsa_dnug_website.infrastructure.Services
+
+@inject MeetupService MService
+<div>
+    @details.Address
+</div>
+
+@functions {
+    MeetingDetails details = new MeetingDetails();
+    protected override async Task OnInitAsync()
+    {
+        details = await MService.GetMeetingInfo();
+    }
+}
