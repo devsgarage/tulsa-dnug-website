@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -9,6 +10,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using tulsa_dnug_website.Components;
+using tulsa_dnug_website.infrastructure.Services;
 using tulsa_dnug_website.Services;
 
 namespace tulsa_dnug_website
@@ -23,7 +25,8 @@ namespace tulsa_dnug_website
                 .AddNewtonsoftJson();
 
             services.AddRazorComponents();
-
+            services.AddSingleton<HttpClient>();
+            services.AddSingleton<MeetupService>();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<WebsiteDataService>();
         }
@@ -41,7 +44,7 @@ namespace tulsa_dnug_website
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting(routes =>

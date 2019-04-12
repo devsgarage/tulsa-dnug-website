@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\tulsa-dnug-website.infrastructure\tulsa-dnug-website.infrastructure.csproj" />
     <ProjectReference Include="..\tulsa-dnug-website.shared-kernel\tulsa-dnug-website.shared-kernel.csproj" />
   </ItemGroup>
 
