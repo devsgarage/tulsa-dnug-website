@@ -20,14 +20,19 @@ namespace tulsa_dnug_website.infrastructure.Services
 
         public async Task<MeetingDetails> GetMeetingInfo()
         {
-            
+
             var url = "https://api.meetup.com/TulsaDevelopers-net/events";
             var results = await client.GetStringAsync(url);
             var meetupEvents = MeetupEvents.FromJson(results);
             var meetupEvent = meetupEvents.FirstOrDefault();
             var details = new MeetingDetails();
-            details.Address = $"{meetupEvent.Venue.Address1}{System.Environment.NewLine}{meetupEvent.Venue.City},{meetupEvent.Venue.State} {meetupEvent.Venue.Zip}";
+            details.Address = meetupEvent.Venue.Address1;
+            details.City = meetupEvent.Venue.City;
+            details.State = meetupEvent.Venue.State;
+            details.Zip = meetupEvent.Venue.Zip;
             details.MeetingTime = meetupEvent.LocalTime;
+            details.Building = meetupEvent.HowToFindUs;
+
 
             return details;
         }

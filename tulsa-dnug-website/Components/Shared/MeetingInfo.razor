@@ -2,8 +2,11 @@
 @using tulsa_dnug_website.infrastructure.Services
 
 @inject MeetupService MService
-<div>
-    @details.Address
+<div class="meeting-info-body">
+    <span>@details.Address</span> <br />
+    <span>@details.City, @details.State @details.Zip</span> <br />
+    <b>Meeting Time:</b> @details.MeetingTime <br />
+    <span>@details.Building</span>
 </div>
 
 @functions {
