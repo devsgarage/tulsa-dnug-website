@@ -24,7 +24,16 @@ namespace tulsa_dnug_website.infrastructure.Services
             var url = "https://api.meetup.com/TulsaDevelopers-net/events";
             var results = await client.GetStringAsync(url);
             var meetupEvents = MeetupEvents.FromJson(results);
-            var meetupEvent = meetupEvents.FirstOrDefault();
+            var meetupEvent = meetupEvents.FirstOrDefault();                
+            
+            return meetupEvent.ToMeetingDetails();
+        }
+    }
+
+    public static class ConversionHelpers
+    {
+        public static MeetingDetails ToMeetingDetails(this MeetupEvents meetupEvent)
+        {
             var details = new MeetingDetails();
             details.Address = meetupEvent.Venue.Address1;
             details.City = meetupEvent.Venue.City;
@@ -32,7 +41,6 @@ namespace tulsa_dnug_website.infrastructure.Services
             details.Zip = meetupEvent.Venue.Zip;
             details.MeetingTime = meetupEvent.LocalTime;
             details.Building = meetupEvent.HowToFindUs;
-
 
             return details;
         }

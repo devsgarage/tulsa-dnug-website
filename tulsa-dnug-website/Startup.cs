@@ -27,6 +27,8 @@ namespace tulsa_dnug_website
             services.AddRazorComponents();
             services.AddSingleton<HttpClient>();
             services.AddSingleton<MeetupService>();
+            services.AddSingleton<StaticDataService>();
+            services.AddSingleton<MeetingInfoService>();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<WebsiteDataService>();
         }
