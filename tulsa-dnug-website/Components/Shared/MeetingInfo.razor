@@ -1,0 +1,19 @@
+﻿@using tulsa_dnug_website.core.Models
+@using tulsa_dnug_website.infrastructure.Services
+
+@inject MeetingInfoService MService
+<h3 class="meeting-info-title">Meeting Location</h3>
+<div class="meeting-info-body">
+    <span>@details.Address</span> <br />
+    <span>@details.City, @details.State @details.Zip</span> <br />
+    <b>Meeting Time:</b> @details.MeetingTime <br />
+    <span>@details.Building</span>
+</div>
+
+@functions {
+    MeetingDetails details = new MeetingDetails();
+    protected override async Task OnInitAsync()
+    {
+        details = await MService.GetMeetingInfo();
+    }
+}

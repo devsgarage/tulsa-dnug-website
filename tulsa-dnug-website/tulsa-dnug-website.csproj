@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
@@ -8,11 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Jacrys.DateTimeExtensions" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Server" Version="3.0.0-preview3-19153-02" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview3-19153-02" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\tulsa-dnug-website.infrastructure\tulsa-dnug-website.infrastructure.csproj" />
     <ProjectReference Include="..\tulsa-dnug-website.shared-kernel\tulsa-dnug-website.shared-kernel.csproj" />
   </ItemGroup>
 
