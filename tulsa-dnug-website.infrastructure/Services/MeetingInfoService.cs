@@ -37,5 +37,10 @@ namespace tulsa_dnug_website.infrastructure.Services
 
             return meetingDetails;
         }
+
+        public async Task<IEnumerable<AgendaItem>> GetAgenda()
+        {
+            return await Task.FromResult(staticDataService.GetMeetingAgenda());
+        }
     }
 }

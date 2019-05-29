@@ -12,7 +12,7 @@ namespace tulsa_dnug_website.core.Models
         public string Zip { get; set; }
         public string MeetingTime { get; set; }
         public string Building { get; set; }
-        public string Agenda { get; set; }
+        public IEnumerable<AgendaItem> Agenda { get; set; } = new List<AgendaItem>();
         public string AfterMeetingMeetup { get; set; }
 
     }

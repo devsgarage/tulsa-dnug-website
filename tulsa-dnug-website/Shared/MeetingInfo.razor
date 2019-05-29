@@ -10,10 +10,18 @@
     <span>@details.Building</span>
 </div>
 
-@functions {
-    MeetingDetails details = new MeetingDetails();
-    protected override async Task OnInitAsync()
+<ul>
+    @foreach (var item in details.Agenda)
     {
-        details = await MService.GetMeetingInfo();
+        <li>@item.StartTime - @item.Description</li>
     }
-}
+</ul>
+
+    @functions {
+        MeetingDetails details = new MeetingDetails();
+        protected override async Task OnInitAsync()
+        {
+            details = await MService.GetMeetingInfo();
+            details.Agenda = await MService.GetAgenda();
+        }
+    }

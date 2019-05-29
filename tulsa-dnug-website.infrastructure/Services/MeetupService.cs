@@ -20,7 +20,6 @@ namespace tulsa_dnug_website.infrastructure.Services
 
         public async Task<MeetingDetails> GetMeetingInfo()
         {
-
             var url = "https://api.meetup.com/TulsaDevelopers-net/events";
             var results = await client.GetStringAsync(url);
             var meetupEvents = MeetupEvents.FromJson(results);

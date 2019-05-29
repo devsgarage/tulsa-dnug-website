@@ -27,5 +27,23 @@ namespace tulsa_dnug_website.infrastructure.Services
                 return null;
             }
         }
+
+        public IEnumerable<AgendaItem> GetMeetingAgenda()
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/agenda.json"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    String jsonString = sr.ReadToEnd();
+                    var agenda = JsonConvert.DeserializeObject<AgendaItem[]>(jsonString).ToList();
+                    return agenda;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }
