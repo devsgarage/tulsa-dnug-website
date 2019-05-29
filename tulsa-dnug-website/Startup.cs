@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using tulsa_dnug_website.Components;
 using tulsa_dnug_website.infrastructure.Services;
 using tulsa_dnug_website.Services;
 
@@ -24,7 +23,10 @@ namespace tulsa_dnug_website
             services.AddMvc()
                 .AddNewtonsoftJson();
 
-            services.AddRazorComponents();
+            services.AddMemoryCache();
+            //services.AddRazorComponents();
+            services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddSingleton<HttpClient>();
             services.AddSingleton<MeetupService>();
             services.AddSingleton<StaticDataService>();
@@ -49,11 +51,17 @@ namespace tulsa_dnug_website
             //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            app.UseRouting(routes =>
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
-                routes.MapRazorPages();
-                routes.MapComponentHub<App>("app");
+                endpoints.MapBlazorHub();
+                endpoints.MapFallbackToPage("/_Host");
             });
+            //app.UseRouting(routes =>
+            //{
+            //    routes.MapRazorPages();
+            //    routes.MapComponentHub<App>("app");
+            //});
         }
     }
 }
