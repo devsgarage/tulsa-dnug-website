@@ -4,9 +4,8 @@ using System.Text;
 
 namespace tulsa_dnug_website.core.Models
 {
-    public class AgendaItem
+    public class ExtraInfo
     {
-        public DateTime StartTime { get; set; }
-        public string Description { get; set; }
+        public string Text { get; set; }
     }
 }

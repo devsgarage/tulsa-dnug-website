@@ -45,5 +45,42 @@ namespace tulsa_dnug_website.infrastructure.Services
                 return null;
             }
         }
+
+        public ExtraInfo GetExtraInformation()
+        {
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/ExtraInformation.json"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    String jsonString = sr.ReadToEnd();
+                    var agenda = JsonConvert.DeserializeObject<ExtraInfo[]>(jsonString).FirstOrDefault();
+                    return agenda;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
+        public IEnumerable<Leader> GetUserGroupLeadership()
+        {
+
+            try
+            {
+                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/Leadership.json"))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    String jsonString = sr.ReadToEnd();
+                    var agenda = JsonConvert.DeserializeObject<Leader[]>(jsonString);
+                    return agenda;
+                }
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
     }
 }

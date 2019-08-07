@@ -6,16 +6,22 @@
 <div class="meeting-info-body">
     <span>@details.Address</span> <br />
     <span>@details.City, @details.State @details.Zip</span> <br />
-    <b>Meeting Time:</b> @details.MeetingTime <br />
     <span>@details.Building</span>
 </div>
-
-<ul>
-    @foreach (var item in details.Agenda)
-    {
-        <li>@item.StartTime - @item.Description</li>
-    }
-</ul>
+<br />
+<h3 class="meeting-info-title">Meeting Agenda</h3>
+<div class="meeting-agenda">
+    <ul>
+        @foreach (var item in details.Agenda)
+        {
+            <li>@string.Format("{0:h':'mm' 'tt}", item.StartTime) - @item.Description</li>
+        }
+    </ul>
+</div>
+<br />
+<div class="after-meeting">
+    <span>@details.AfterMeetingMeetup</span>
+</div>
 
     @functions {
         MeetingDetails details = new MeetingDetails();
@@ -23,5 +29,6 @@
         {
             details = await MService.GetMeetingInfo();
             details.Agenda = await MService.GetAgenda();
+            details.AfterMeetingMeetup = (await MService.GetExtraInformation()).Text;
         }
     }

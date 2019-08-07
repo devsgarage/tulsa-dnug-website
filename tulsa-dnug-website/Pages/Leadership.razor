@@ -1,6 +1,6 @@
 @page "/leadership"
-@using tulsa_dnug_website.Services
-@using tulsa_dnug_website.shared_kernel.Models
+@using tulsa_dnug_website.core.Models
+@using tulsa_dnug_website.infrastructure.Services
 @inject WebsiteDataService websiteDataService
 
 <h1>Leadership Page</h1>
@@ -35,7 +35,7 @@ else
 }
 
 @functions {
-    Leader[] leaders;
+    IEnumerable<Leader> leaders;
 
     protected override async Task OnInitAsync()
     {

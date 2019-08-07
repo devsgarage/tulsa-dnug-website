@@ -16,16 +16,16 @@ namespace tulsa_dnug_website.api.Controllers
         // **TODO: Add method security
         private readonly ILeaderRepository leaderRepository;
 
-        public LeadersController()
+        public LeadersController(ILeaderRepository repo)
         {
-            this.leaderRepository = new UnitOfWork().LeaderRepository;
+            this.leaderRepository = repo;
         }
 
         // GET: api/Leaders
         [HttpGet]
-        public IEnumerable<Leader> Get()
+        public IActionResult Get()
         {
-            return leaderRepository.GetLeaders();
+            return Ok(leaderRepository.GetLeaders());
         }
 
         // GET: api/Leaders/5

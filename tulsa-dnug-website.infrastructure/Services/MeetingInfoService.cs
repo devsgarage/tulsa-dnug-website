@@ -42,5 +42,10 @@ namespace tulsa_dnug_website.infrastructure.Services
         {
             return await Task.FromResult(staticDataService.GetMeetingAgenda());
         }
+
+        public async Task<ExtraInfo> GetExtraInformation()
+        {
+            return await Task.FromResult(staticDataService.GetExtraInformation());
+        }
     }
 }
