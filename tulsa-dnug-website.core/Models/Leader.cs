@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace tulsa_dnug_website.shared_kernel.Models
+namespace tulsa_dnug_website.core.Models
 {
     public class Leader
     {

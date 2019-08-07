@@ -1,0 +1,25 @@
+﻿.meeting-info-body {
+    text-align: center;
+}
+
+.meeting-info-title {
+    text-align: center;
+}
+
+.meeting-agenda {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meeting-agenda ul{
+    list-style: none;
+}
+
+.meeting-agenda ul > li {
+    max-width: 15em;
+}
+
+.after-meeting {
+    text-align: center;
+}

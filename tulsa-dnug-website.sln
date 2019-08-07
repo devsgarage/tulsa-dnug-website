@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tulsa-dnug-website.core", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tulsa-dnug-website.infrastructure", "tulsa-dnug-website.infrastructure\tulsa-dnug-website.infrastructure.csproj", "{084EB71E-2433-4529-B2FD-AF6453487A61}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tulsa-dnug-website.api", "tulsa-dnug-api\tulsa-dnug-website.api.csproj", "{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tulsa-dnug-website.shared-kernel", "tulsa-dnug-website.shared-kernel\tulsa-dnug-website.shared-kernel.csproj", "{81FE4019-979D-4C07-8076-A8125D624B8D}"
 EndProject
 Global
@@ -59,18 +57,6 @@ Global
 		{084EB71E-2433-4529-B2FD-AF6453487A61}.Release|x64.Build.0 = Release|Any CPU
 		{084EB71E-2433-4529-B2FD-AF6453487A61}.Release|x86.ActiveCfg = Release|Any CPU
 		{084EB71E-2433-4529-B2FD-AF6453487A61}.Release|x86.Build.0 = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|x64.Build.0 = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Debug|x86.Build.0 = Debug|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|x64.ActiveCfg = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|x64.Build.0 = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|x86.ActiveCfg = Release|Any CPU
-		{5DDC1C5D-8DDC-445C-8BDE-0CFDEA43E115}.Release|x86.Build.0 = Release|Any CPU
 		{81FE4019-979D-4C07-8076-A8125D624B8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{81FE4019-979D-4C07-8076-A8125D624B8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{81FE4019-979D-4C07-8076-A8125D624B8D}.Debug|x64.ActiveCfg = Debug|Any CPU
