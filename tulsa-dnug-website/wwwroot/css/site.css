@@ -37,10 +37,19 @@ app {
     align-items: center;
 }
 
-.background-image {
+/*.background-image {
     background-image: url('../assets/DNUGLogo.png');
+    background-size: 100vh;
+    background-repeat: no-repeat;
     opacity: 0.2;
-}
+    content: "";
+    top: 0;
+    left: 250px;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}*/
 
 .main {
     flex: 1;

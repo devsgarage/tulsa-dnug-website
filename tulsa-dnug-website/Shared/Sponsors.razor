@@ -1,0 +1,21 @@
+﻿@using tulsa_dnug_website.core.Models
+@using tulsa_dnug_website.infrastructure.Services
+
+@inject SponsorInfoService sponsorInfoService;
+
+<div>
+    <ul>
+        @foreach (var sponsor in sponsorInfoList)
+        {
+            <li>@sponsor.Name</li>
+        }
+    </ul>
+</div>
+
+@code {
+    IEnumerable<SponsorInfo> sponsorInfoList;
+    protected override async Task OnInitializedAsync()
+    {
+        sponsorInfoList = await sponsorInfoService.GetSponsorsInfoAsync();
+    }
+}

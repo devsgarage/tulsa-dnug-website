@@ -23,9 +23,9 @@
     <span>@details.AfterMeetingMeetup</span>
 </div>
 
-    @functions {
+    @code {
         MeetingDetails details = new MeetingDetails();
-        protected override async Task OnInitAsync()
+        protected override async Task OnInitializedAsync()
         {
             details = await MService.GetMeetingInfo();
             details.Agenda = await MService.GetAgenda();

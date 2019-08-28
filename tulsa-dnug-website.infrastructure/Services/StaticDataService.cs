@@ -12,69 +12,39 @@ namespace tulsa_dnug_website.infrastructure.Services
     {
         public MeetingDetails GetMeetingInfo()
         {
-            try
-            {
-                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/venue.json"))
-                {
-                    // Read the stream to a string, and write the string to the console.
-                    String jsonString = sr.ReadToEnd();
-                    var meetingdetails = JsonConvert.DeserializeObject<MeetingDetails[]>(jsonString).FirstOrDefault();
-                    return meetingdetails;
-                }
-            }
-            catch(Exception ex)
-            {
-                return null;
-            }
+            return GetInfo<MeetingDetails>(@"wwwroot/site_info/venue.json").FirstOrDefault();
         }
 
         public IEnumerable<AgendaItem> GetMeetingAgenda()
         {
-            try
-            {
-                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/agenda.json"))
-                {
-                    // Read the stream to a string, and write the string to the console.
-                    String jsonString = sr.ReadToEnd();
-                    var agenda = JsonConvert.DeserializeObject<AgendaItem[]>(jsonString).ToList();
-                    return agenda;
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+            return GetInfo<AgendaItem>(@"wwwroot/site_info/agenda.json");
         }
 
         public ExtraInfo GetExtraInformation()
-        {
-            try
-            {
-                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/ExtraInformation.json"))
-                {
-                    // Read the stream to a string, and write the string to the console.
-                    String jsonString = sr.ReadToEnd();
-                    var agenda = JsonConvert.DeserializeObject<ExtraInfo[]>(jsonString).FirstOrDefault();
-                    return agenda;
-                }
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
+        {   
+            return GetInfo<ExtraInfo>(@"wwwroot/site_info/ExtraInformation.json").FirstOrDefault();
         }
 
         public IEnumerable<Leader> GetUserGroupLeadership()
         {
+            return GetInfo<Leader>(@"wwwroot/site_info/Leadership.json");
+        }
 
+        public IEnumerable<SponsorInfo> GetSponsorsInfo()
+        {
+            return GetInfo<SponsorInfo>(@"wwwroot/site_info/sponsorsInfo.json");
+        }
+
+        private IEnumerable<T> GetInfo<T>(string infoLocation)
+        {
             try
             {
-                using (StreamReader sr = new StreamReader(@"wwwroot/site_info/Leadership.json"))
+                using (StreamReader sr = new StreamReader(infoLocation))
                 {
                     // Read the stream to a string, and write the string to the console.
                     String jsonString = sr.ReadToEnd();
-                    var agenda = JsonConvert.DeserializeObject<Leader[]>(jsonString);
-                    return agenda;
+                    var sponsorInfo = JsonConvert.DeserializeObject<T[]>(jsonString);
+                    return sponsorInfo;
                 }
             }
             catch (Exception ex)

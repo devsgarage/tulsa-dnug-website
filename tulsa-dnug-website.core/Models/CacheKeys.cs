@@ -9,5 +9,7 @@ namespace tulsa_dnug_website.core.Models
         public static string MeetupInfo { get { return "_MeetupInfo"; } }
 
         public static string Leadership { get { return "_Leadership"; } }
+
+        public static string SponsorInfo { get { return "_SponsorInfo"; } }
     }
 }
