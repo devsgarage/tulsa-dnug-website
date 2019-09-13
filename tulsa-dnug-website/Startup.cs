@@ -58,11 +58,6 @@ namespace tulsa_dnug_website
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
-            //app.UseRouting(routes =>
-            //{
-            //    routes.MapRazorPages();
-            //    routes.MapComponentHub<App>("app");
-            //});
         }
     }
 }

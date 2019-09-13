@@ -3,11 +3,29 @@
 
 @inject SponsorInfoService sponsorInfoService;
 
-<div>
-    <ul>
+<div class="sponsor-main">
+    <h3>Sponsors</h3>
+    <ul class="sponsor-container">
         @foreach (var sponsor in sponsorInfoList)
         {
-            <li>@sponsor.Name</li>
+            @if (sponsor.ShowInfo == ShowInfoEnum.Name)
+            {
+                <li>@sponsor.Name</li>
+            }
+            else if (sponsor.ShowInfo == ShowInfoEnum.Logo)
+            {
+                <li>
+                    <img src="@sponsor.Logo" class="sponsor-image" />
+                </li>
+            }
+            else
+            {
+                <li>
+                    <img src="@sponsor.Logo" class="sponsor-image" />
+                    <br />
+                    @sponsor.Name
+                </li>
+            }
         }
     </ul>
 </div>
