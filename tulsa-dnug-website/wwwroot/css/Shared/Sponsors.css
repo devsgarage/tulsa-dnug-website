@@ -2,8 +2,15 @@
     text-align: center;
 }
 .sponsor-container{
-    list-style: none;
+    list-style: none;    
 }
+
+.sponsor-container li {
+    display: inline-block;
+    vertical-align:middle;
+    padding: 0.5em 2em;
+}
+
 .sponsor-image{
     width: 35em;
 }
