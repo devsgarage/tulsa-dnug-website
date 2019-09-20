@@ -1,0 +1,22 @@
+[
+  {
+    "startTime": "18:00",
+    "description": "Meet, Greet & Eat"
+  },
+  {
+    "startTime": "18:20",
+    "description": "Announcements and speaker introduction"
+  },
+  {
+    "startTime": "18:30",
+    "description": "Lightning talk"
+  },
+  {
+    "startTime": "19:15",
+    "description": "Main presentation"
+  },
+  {
+    "startTime": "20:30",
+    "description": "Prize drawing"
+  }
+]

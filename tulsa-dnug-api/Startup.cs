@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using tulsa_dnug_website.api.DAL;
 
 namespace tulsa_dnug_website.api
 {
@@ -28,6 +29,7 @@ namespace tulsa_dnug_website.api
         {
             services.AddMvc()
                 .AddNewtonsoftJson();
+            services.AddSingleton<ILeaderRepository>(new UnitOfWork().LeaderRepository);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

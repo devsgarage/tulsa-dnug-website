@@ -5,4 +5,8 @@
     <RootNamespace>tulsa_dnug_website.shared_kernel</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
