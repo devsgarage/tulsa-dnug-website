@@ -6,7 +6,7 @@
 <div class="sponsor-main">
     <h3>Sponsors</h3>
     <ul class="sponsor-container">
-        @foreach (var sponsor in sponsorInfoList)
+        @foreach (var sponsor in sponsorInfoList.OrderBy(x => x.Position))
         {
             @if (sponsor.ShowInfo == ShowInfoEnum.Name)
             {

@@ -1,20 +1,39 @@
 [
   {
     "Name": "TEKsystems",
-    "Logo": "../assets/tek.png",
+    "Logo": "../assets/teksystems.png",
     "ShowInfo": "logo",
     "Position": "1"
   },
   {
-    "Name": "Test2",
-    "Logo": "../assets/tek.png",
-    "ShowInfo": "name",
+    "Name": "eLynx",
+    "Logo": "../assets/elynx.jpg",
+    "ShowInfo": "logo",
     "Position": "2"
   },
   {
-    "Name": "Test3",
-    "Logo": "../assets/tek.png",
-    "ShowInfo": "both",
-    "Position": "3"
+    "Name": "JetBrains",
+    "Logo": "../assets/jetbrains.png",
+    "ShowInfo": "logo",
+    "Position": "4"
+  },
+  {
+    "Name": "O'Reilly",
+    "Logo": "../assets/OReilly_logo_rgb.png",
+    "ShowInfo": "logo",
+    "Position": "5"
+  },
+  {
+    "Name": "Infragistics",
+    "Logo": "../assets/infragistics.gif",
+    "ShowInfo": "logo",
+    "Position": "7"
+  },
+  {
+    "Name": "Clean Coders",
+    "Logo": "../assets/cleancoders.png",
+    "ShowInfo": "logo",
+    "Position": "6"
   }
+
 ]

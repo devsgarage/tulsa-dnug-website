@@ -12,5 +12,7 @@
 }
 
 .sponsor-image{
-    width: 35em;
+    width: 15em;
+    max-height:10em;
+    object-fit: contain;
 }
