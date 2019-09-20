@@ -33,6 +33,7 @@ namespace tulsa_dnug_website
             services.AddSingleton<MeetingInfoService>();
             services.AddSingleton<WeatherForecastService>();
             services.AddSingleton<WebsiteDataService>();
+            services.AddSingleton<SponsorInfoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,11 +58,6 @@ namespace tulsa_dnug_website
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
-            //app.UseRouting(routes =>
-            //{
-            //    routes.MapRazorPages();
-            //    routes.MapComponentHub<App>("app");
-            //});
         }
     }
 }
