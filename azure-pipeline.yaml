@@ -1,0 +1,45 @@
+name: $(Build.BuildId)
+
+trigger:
+  - master
+  - dev
+pr:
+  - master
+  - dev
+
+variables:
+  buildConfiguration: 'Release'
+  Parameters.Solution: '$(Build.SourcesDirectory)/tulsa-dnug-website.sln'
+  Artifact: 'website'
+
+stages:
+  - stage: Build
+    jobs:
+      - job: Build
+        pool:
+          vmImage: windows-2019
+        variables:
+            buildConfiguration: 'Release'
+            Parameters.Solution: '$(Build.SourcesDirectory)/tulsa-dnug-website.sln'
+        steps:
+          - task: UseDotNet@2
+            displayName: 'Use .NET Core SDK 3.0'
+            inputs:
+              packageType: sdk
+              version: 3.0.100
+  
+          - task: DotNetCoreCLI@2
+            displayName: Restore
+            inputs:
+              command: restore
+              projects: '$(Parameters.Solution)'
+  
+          - task: DotNetCoreCLI@2
+            displayName: Build
+            inputs:
+              projects: '$(Parameters.Solution)'
+              arguments: '--configuration $(BuildConfiguration) --no-restore'
+
+          - publish: '$(Build.ArtifactStagingDirectory)'
+            artifact: '$(Artifact)'
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
