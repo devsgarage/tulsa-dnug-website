@@ -170,7 +170,6 @@ footer {
 
     .sidebar {
         width: 250px;
-        height: 90vh;
         position: sticky;
         top: 0;
     }
