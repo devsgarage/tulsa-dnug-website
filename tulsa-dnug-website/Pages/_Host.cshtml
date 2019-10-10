@@ -21,6 +21,7 @@
     <link href="css/site.css" rel="stylesheet" />
 </head>
 <body>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0"></script>
     <app>@(await Html.RenderComponentAsync<App>(RenderMode.ServerPrerendered))</app>
 
     <script src="_framework/components.server.js"></script>
