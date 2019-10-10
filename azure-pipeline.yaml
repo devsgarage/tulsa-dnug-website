@@ -2,10 +2,8 @@ name: $(Build.BuildId)
 
 trigger:
   - master
-  - dev
 pr:
-  - master
-  - dev
+  - none
 
 variables:
   buildConfiguration: 'Release'
