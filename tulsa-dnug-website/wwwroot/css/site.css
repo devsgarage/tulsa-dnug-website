@@ -138,19 +138,27 @@ app {
 }
 
 .social-media {
-    height: 10vh;
-    background-color: black;
-    padding-left: 250px; 
+    height: 8em; 
 }
 
 .social-media > div {
-    padding-top: 2.5rem;
+    padding-top: 2em;
+    vertical-align:middle;
     text-align: center;
 }
 
-    .social-media > div > div{
-        margin-right: 1.5em;
-    }
+.social-media > div > div{
+    height: 2em;
+    margin-right: 1.5em;
+}
+
+.social-media > div > a > img {
+    height: 3em;   
+}
+
+.social-media > div > a:not(:last-child) > img {
+    margin-right: 1.5em;
+}
 
 .social-media a:hover {
     text-decoration: none;
